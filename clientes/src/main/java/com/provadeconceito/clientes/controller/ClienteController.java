@@ -7,9 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/cliente")
+@CrossOrigin("http://localhost:4200")
 public class ClienteController {
 
     @Autowired
@@ -26,6 +28,13 @@ public class ClienteController {
     public Cliente findById(@PathVariable Integer id){
         return this.service.findById(id);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Cliente> findAll(){
+        return this.service.findAll();
+    }
+
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

@@ -19,10 +19,10 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false, length = 150)
-    @NotEmpty(message = "{compo.nome.obrigatorio}")
+    @NotEmpty(message = "Campo nome é obrigatorio !")
     private String nome;
     @Column(nullable = false, length = 11)
-    @NotNull(message = "{compo.cpf.obrigatorio}")
+    @NotNull(message = "Campo CPF é obrigatorio !")
     private String cpf;
     @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")

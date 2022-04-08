@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
 public class ClienteService {
 
@@ -31,5 +33,9 @@ public class ClienteService {
         c.setCpf(cliente.getCpf());
         c.setNome(cliente.getNome());
         this.repository.save(c);
+    }
+
+    public List<Cliente> findAll() {
+        return this.repository.findAll();
     }
 }
